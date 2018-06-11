@@ -1,0 +1,18 @@
+<div class="todo-list-wrapper">
+  <h2>To do list</h2>
+  <div class="todo-actions-wrapper">
+    <input type="text" name="toDoText" [(ngModel)]="toDoText">
+    <button (click)="addToDo()" [disabled]="toDoText.length==0">Add to do</button>
+  </div>
+  <div class="todo-actions-wrapper">
+    <button (click)="selectAll()">Select all</button>
+    <button (click)="unSelectAll()">Unselect all</button>
+    <button (click)="deleteSelected()">Delete selected</button>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let toDo of toDoList">
+    <input type="checkbox" [(ngModel)]="toDo.checked">
+    {{toDo.text}}
+    </li>
+  </ul>
+</div>
